@@ -133,6 +133,25 @@ body {
   flex-wrap: wrap;
 }
 
+/* force About Me to never wrap its two halves */
+#about-me .about-container {
+  flex-wrap: nowrap !important;
+  gap: 2rem; /* optional spacing */
+}
+
+/* allow both panels to shrink below their natural size */
+#about-me .about-text,
+#about-me .about-image {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* scale the image down on tighter layouts */
+#about-me .about-image img {
+  width: clamp(120px, 25vw, 250px);
+  height: auto;
+}
+
 /* About Me Text */
 .about-text {
   max-width: 500px;
@@ -605,66 +624,5 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
   cursor: pointer;
-}
-
-/* 1. Make all your fixed‐width containers fluid */
-.hero-container,
-#about-me,
-#contact-form {
-  width: 90vw;        /* always use 90% of the viewport width */
-  max-width: 500px;   /* fall back to your original max */
-}
-
-#portfolio {
-  width: 90vw;
-  max-width: 900px;
-}
-
-/* 2. Fluid padding and fonts via clamp() */
-.hero-container,
-#about-me,
-#contact-form {
-  padding: clamp(1rem, 4vw, 2.5rem);
-}
-
-.title,
-.portfolio-title {
-  font-size: clamp(1.5rem, 6vw, 3rem);
-}
-
-.about-text h1 {
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
-}
-
-.about-text p {
-  font-size: clamp(0.9rem, 3.5vw, 1rem);
-  line-height: 1.6;
-}
-
-/* 3. Scale buttons and inputs */
-.repo-buttons button,
-.language-dropdown,
-.ingest-button,
-#contact-form button[type="submit"] {
-  padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1rem, 3vw, 2rem);
-  font-size: clamp(0.8rem, 2.5vw, 1rem);
-}
-
-/* 4. Scale the profile image */
-.about-image img {
-  width: clamp(150px, 30vw, 250px);
-}
-
-/* 5. Ensure code block also shrinks */
-.code-container {
-  max-width: 100%;
-  overflow-x: auto;
-}
-
-/* 6. Tweak project‐grid radius on small screens */
-@media (max-width: 600px) {
-  .project-card { 
-    --portfolio-radius: 100px;
-  }
 }
 
