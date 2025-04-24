@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boma Halliday | Creative Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video id="background-video" autoplay loop muted>
+    <source src="assets/images/Home_video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Hero Section -->
+  <div class="hero-container" id="hero">
+    <h1 class="title">Boma Halliday</h1>
+
+    <!-- Code Block Dropdown -->
+    <div class="code-container">
+      <select id="language-selector" class="language-dropdown" onchange="changeLanguage()">
+        <option value="java">Java</option>
+        <option value="python">Python</option>
+        <option value="cpp">C++</option>
+        <option value="prolog">Prolog</option>
+        <option value="english">English</option>
+
+      </select>
+      <pre><code id="code-snippet">
+<span class="keyword">while</span> (!ideas.isReal()) {
+    <span class="function">mix</span>(<span class="variable">creativity</span>, <span class="variable">softwareDevelopment</span>);
+}
+      </code></pre>
+    </div>
+
+    <!-- Email Input -->
+    <div class="input-container">
+      <input type="email" id="email-input" placeholder="Enter your email..." class="url-input">
+      <button class="ingest-button" onclick="redirectToContact()">Explore</button>
+    </div>
+
+    <!-- Section Reveal Buttons -->
+    <div class="repo-buttons">
+      <button onclick="showAboutMe()">About Me</button>
+      <button onclick="showPortfolio()">Portfolio</button>
+      <button onclick="showContact()">Contact Me</button>
+    </div>
+  </div>
+
+  <!-- About Me Section (Initially Hidden) -->
+  <section id="about-me">
+    <div class="about-container">
+      <div class="about-text">
+        <div class="about-header">
+          <button class="back-button" onclick="goBack()">&#8592;</button>
+          <h1>About Me</h1>
+        </div>
+        <h2>Software Engineer</h2>
+        <p>
+          I'm a passionate software engineer specializing in crafting 
+          accessible, user-friendly, and innovative digital products. 
+          My art combines imaginative creativity with the latest technology 
+          to deliver efficient and beautiful projects that function seamlessly across multiple platforms.
+        </p>
+          
+        <p>
+          I'm proficient in numerous programming languages, development tools, and frameworks 
+          with experience in web and mobile application development. I've done individual contributions, 
+          team projects, and turning ideas into reality.
+        </p>
+        <div class="about-buttons">
+          <a href="assets/Resume.pdf" class="btn-primary" download>Download Resume</a>
+          <a href="#" class="btn-secondary" onclick="goBack(); setTimeout(showContact, 850); return false;">
+            Let’s Talk
+          </a>
+        </div>
+          
+      </div>
+      <div class="about-image">
+        <img src="assets/images/profile_image2.jpg" alt="Boma Halliday">
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section (Initially Hidden) -->
+  <section id="portfolio">
+    <div class="portfolio-container">
+      <div class = "portfolio-title-container">
+        <h1 class="portfolio-title">My Work</h1>
+      </div>
+    
+      <div class="project-grid">
+
+        <div class="project-card" data-key="ai">
+          <span>💻</span>
+          <div class="project-content">
+            <h3>AI/Machine Learning</h3>
+            <p>View all my AI incorporated projects.</p>
+            <a href="https://github.com/Halliday24/RTW-app-2024.git" class="btn-primary">View More</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-key="mobile">
+          <span>📱</span>
+          <div class="project-content">
+            <h3>Mobile apps</h3>
+            <p>View all my finished mobile apps</p>
+            <a href="#" class="btn-primary">View More</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-key="games">
+          <span>🎮</span>
+          <div class="project-content">
+            <h3>Games</h3>
+            <p>Rate my finished games and maybe give one a try.</p>
+            <a href="#" class="btn-primary">View More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Back Button for Portfolio -->
+    <button class="back-button" onclick="goBackPortfolio()">&#8592;</button>
+  </section>
+
+  <!-- Contact Section (Initially Hidden) -->
+<section id="contact-form">
+  <form action="https://formspree.io/f/mqakwdbk" method="POST">
+    <h2>Get in Touch</h2>
+    <input type="text" id="name" name="name" placeholder="Your Name" required>
+    <input type="email" id="email" name="email" placeholder="Your Email" required>
+    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <!-- Back Button for Contact -->
+  <button class="back-button" onclick="goBackContact()">&#8592;</button>
+</section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+
